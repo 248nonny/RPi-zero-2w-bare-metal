@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
-cargo build --release
 mkdir -p ./sd_mount
 sudo mount -L PEGERR_BOOT ./sd_mount -o uid=$(id -u),gid=$(id -g)
-aarch64-none-elf-objcopy -O binary ./target/aarch64-unknown-none/release/bare_metal_pi_zero ./sd_mount/kernelPEGERR.img
+aarch64-none-elf-objcopy -O binary ./target/aarch64-unknown-none/debug/bare_metal_pi_zero ./sd_mount/kernelPEGERR.img
 # cp ./target/aarch64-unknown-none/release/bare_metal_pi_zero ./sd_mount/kernelPEGERR.img
 cp ./sd_files/* ./sd_mount/
 sudo umount ./sd_mount

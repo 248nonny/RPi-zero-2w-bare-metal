@@ -8,6 +8,12 @@ pkgs.mkShell {
     pkgs.cargo-binutils  # for objdump, nm, etc.
     pkgs.llvmPackages.bintools
     pkgs.pkgsCross.aarch64-embedded.buildPackages.gcc
+
+    # For ESP32 (or other Arduino) UART forwarding.
+    # Arduino for simplicity.
+    pkgs.arduino-ide
+    pkgs.python3
+    pkgs.picocom
   ];
 
   RUST_TARGET_PATH = ".";
