@@ -1,0 +1,3 @@
+sudo mount -L PEGERR_BOOT ./sd_mount -o uid=$(id -u),gid=$(id -g)
+rm ./sd_mount/*
+sudo umount ./sd_mount

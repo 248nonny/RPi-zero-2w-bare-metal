@@ -32,4 +32,9 @@ SECTIONS
     __bss_end = .;
     __bss_size = __bss_end - __bss_start;
     __end = .;
+
+
+    . = ALIGN(4096);
+    _stack_start = .;
+    . = . + 0x10000;
 }

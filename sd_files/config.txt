@@ -1,0 +1,4 @@
+
+kernel=kernelPEGERR.img
+
+arm_64bit=1

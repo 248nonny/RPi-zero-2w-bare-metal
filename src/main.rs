@@ -16,19 +16,21 @@ mod boot {
     );
 }
 
+
+
 #[no_mangle]
 pub extern "C" fn _start() -> ! {
     unsafe {
-        core::ptr::write_volatile(0x3F20_0008 as *mut u32, 1<<3);
+        core::ptr::write_volatile(0x4000_0008 as *mut u32, 1<<3);
 
         loop {
-            core::ptr::write_volatile(0x3F20_001C as *mut u32, 1<<21);
+            core::ptr::write_volatile(0x4000_001C as *mut u32, 1<<21);
             
-            for _ in 1..50000 {
+            for _ in 1..70000 {
                     asm!("nop");
             }
             
-            core::ptr::write_volatile(0x3F20_0028 as *mut u32, 1<<21);
+            core::ptr::write_volatile(0x4000_0028 as *mut u32, 1<<21);
             
             for _ in 1..50000 {
                     asm!("nop");
